@@ -27,8 +27,8 @@
         }
         </script> -->
 </head>
-<center>
 <body bgcolor="red">
+    <center>
     <marquee scrollamount="20" loop hspace="2" vspace="3">
         <?php for($i=0;$i<1000;$i++){
             echo "<img src='an.jpg' width='400' height='400' name='image'/>";
