@@ -2,15 +2,28 @@
   <head>
     <title>TVA Belt</title>
     <script>
-      window.onload = function () {
-        function slide() {
-          document.getElementById("aaa").innerHTML =
-            "THANTHAYE THAPPI VANATHANO ???...";
-        }
-
-        setInterval(slide, 5000);
-      };
-    </script>
+        window.onload = function () {
+          // Array of strings
+          var textArray = [
+            "THANTHAYE THAPPI VANATHANO ???...",
+            "Ithuvere Poilleda Myre...",
+            "Enna ni irrunnu oombiko....",
+            // Add more strings as needed
+          ];
+    
+          // Index to keep track of the current string
+          var currentIndex = 0;
+    
+          // Function to change the text content
+          function changeText() {
+            document.getElementById("aaa").innerHTML = textArray[currentIndex];
+            currentIndex = (currentIndex + 1) % textArray.length; // Increment and loop back to the beginning if necessary
+          }
+    
+          // Set an interval to call the function every 10 seconds
+          setInterval(changeText, 10000);
+        };
+      </script>
   </head>
   <body bgcolor="red">
     <!-- <center> -->
