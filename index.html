@@ -32,18 +32,45 @@
         position: absolute;
         top: 40%;
         left: 50%;
-        transform: translate(-50%, -50%); /* Center tooltip */
+        transform: translate(-50%, -50%);
         display: none;
         background-color: #fff;
         border: 1px solid #ddd;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         padding: 1rem;
         z-index: 10;
-        width: 280px; /* Adjust size */
+        width: 280px;
         text-align: center;
         pointer-events: none;
         border-radius: 8px;
+        max-width: 90vw; /* Prevent overflow on very small screens */
       }
+
+      /* Small screens (phones) */
+      @media (max-width: 480px) {
+        .tooltip {
+          width: 40vw;
+          padding: 0.75rem;
+          top: 45%; /* slightly lower for better fit */
+        }
+      }
+
+      /* Medium screens (tablets) */
+      @media (min-width: 481px) {
+        .tooltip {
+          width: 300px;
+          padding: 1rem;
+        }
+      }
+
+      /* Large screens (desktops and above)
+      @media (min-width: 769px) {
+        .tooltip {
+          width: 320px;
+          padding: 1.2rem;
+        }
+      } */
+
       .tooltip img {
         width: 100%;
         height: auto;
