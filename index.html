@@ -30,9 +30,9 @@
       }
       .tooltip {
         position: absolute;
-        top: 40%;
+        /* bottom: 15%; */
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -30%);
         display: none;
         background-color: #fff;
         border: 1px solid #ddd;
@@ -51,7 +51,10 @@
         .tooltip {
           width: 40vw;
           padding: 0.75rem;
-          top: 45%; /* slightly lower for better fit */
+        }
+        .tooltip h4 {
+          margin: 0.5rem 0 0;
+          font-size: 1rem;
         }
       }
 
@@ -60,6 +63,10 @@
         .tooltip {
           width: 300px;
           padding: 1rem;
+        }
+        .tooltip h4 {
+          margin: 0.5rem 0 0;
+          font-size: 1.5rem;
         }
       }
 
@@ -76,11 +83,14 @@
         height: auto;
         border-radius: 5px;
       }
-
-      .tooltip h4 {
-        margin: 0.5rem 0 0;
-        font-size: 1.5rem;
+      #tooltip-image {
+        transition: opacity 0.5s ease-in-out;
+        opacity: 1;
       }
+      #tooltip-image.hidden {
+        opacity: 0;
+      }
+
       .spinner {
         width: 30px;
         height: 30px;
@@ -134,7 +144,11 @@
     <script>
       const studentData = [
         {
-          imageUrl: "./images/DEEPU.JPG",
+          imageUrl: [
+            "./images/DEEPU.JPG",
+            "./images/DEEPU1.JPG",
+            "./images/DEEPU2.JPG",
+          ],
           name: "DEEPU JOSEPH",
           id: "1",
           coords:
@@ -142,7 +156,12 @@
           shape: "poly",
         },
         {
-          imageUrl: "./images/SUSMITH.JPG",
+          imageUrl: [
+            "./images/SUSMITH.JPG",
+            "./images/SUSMITH1.JPG",
+            "./images/SUSMITH2.JPG",
+            "./images/SUSMITH3.JPG",
+          ],
           name: "SUSMITH",
           id: "2",
           coords:
@@ -150,7 +169,12 @@
           shape: "poly",
         },
         {
-          imageUrl: "./images/ANANDHU.JPG",
+          imageUrl: [
+            "./images/ANANDHU.JPG",
+            "./images/ANANDHU1.JPG",
+            "./images/ANANDHU2.JPG",
+            "./images/ANANDHU3.JPG",
+          ],
           name: "ANANDHU S KUMAR",
           id: "3",
           coords:
@@ -158,7 +182,14 @@
           shape: "poly",
         },
         {
-          imageUrl: "./images/AMITH.JPG",
+          imageUrl: [
+            "./images/AMITH.JPG",
+            "./images/AMITH1.JPG",
+            "./images/AMITH2.JPG",
+            "./images/AMITH3.JPG",
+            "./images/AMITH4.JPG",
+            "./images/AMITH5.JPG",
+          ],
           name: "AMITH SIJU",
           id: "4",
           coords:
@@ -166,7 +197,14 @@
           shape: "poly",
         },
         {
-          imageUrl: "./images/AMITH.JPG",
+          imageUrl: [
+            "./images/AMITH.JPG",
+            "./images/AMITH1.JPG",
+            "./images/AMITH2.JPG",
+            "./images/AMITH3.JPG",
+            "./images/AMITH4.JPG",
+            "./images/AMITH5.JPG",
+          ],
           name: "AMITH SIJU",
           id: "41",
           coords:
@@ -174,7 +212,14 @@
           shape: "poly",
         },
         {
-          imageUrl: "./images/AMITH.JPG",
+          imageUrl: [
+            "./images/AMITH.JPG",
+            "./images/AMITH1.JPG",
+            "./images/AMITH2.JPG",
+            "./images/AMITH3.JPG",
+            "./images/AMITH4.JPG",
+            "./images/AMITH5.JPG",
+          ],
           name: "AMITH SIJU",
           id: "42",
           coords:
@@ -182,7 +227,12 @@
           shape: "poly",
         },
         {
-          imageUrl: "./images/RAHUL.JPG",
+          imageUrl: [
+            "./images/RAHUL.JPG",
+            "./images/RAHUL1.JPG",
+            "./images/RAHUL2.JPG",
+            "./images/RAHUL3.JPG",
+          ],
           name: "RAHUL K J",
           id: "5",
           coords:
@@ -190,7 +240,13 @@
           shape: "poly",
         },
         {
-          imageUrl: "./images/ANAND.JPG",
+          imageUrl: [
+            "./images/ANAND.JPG",
+            "./images/ANAND1.JPG",
+            "./images/ANAND2.JPG",
+            "./images/ANAND3.JPG",
+            "./images/ANAND4.JPG",
+          ],
           name: "ANAND VISWANATH",
           id: "6",
           coords:
@@ -198,7 +254,13 @@
           shape: "poly",
         },
         {
-          imageUrl: "./images/DIPIN.JPG",
+          imageUrl: [
+            "./images/DIPIN.JPG",
+            "./images/DIPIN1.JPG",
+            "./images/DIPIN2.JPG",
+            "./images/DIPIN3.JPG",
+            "./images/DIPIN4.JPG",
+          ],
           name: "DIPIN D S",
           id: "7",
           coords:
@@ -206,7 +268,13 @@
           shape: "poly",
         },
         {
-          imageUrl: "./images/VAISHNAV.JPG",
+          imageUrl: [
+            "./images/VAISHNAV.JPG",
+            "./images/VAISHNAV1.JPG",
+            "./images/VAISHNAV2.JPG",
+            "./images/VAISHNAV3.JPG",
+            "./images/VAISHNAV4.JPG",
+          ],
           name: "VAISHNAV V",
           id: "8",
           coords:
@@ -214,7 +282,14 @@
           shape: "poly",
         },
         {
-          imageUrl: "./images/SABIN.JPG",
+          imageUrl: [
+            "./images/SABIN.JPG",
+            "./images/SABIN1.JPG",
+            "./images/SABIN2.JPG",
+            "./images/SABIN3.JPG",
+            "./images/SABIN4.JPG",
+            "./images/SABIN5.JPG",
+          ],
           name: "SABIN K",
           id: "9",
           coords:
@@ -222,15 +297,28 @@
           shape: "poly",
         },
         {
-          imageUrl: "./images/SARATH.JPG",
+          imageUrl: [
+            "./images/SARATH.JPG",
+            "./images/SARATH1.JPG",
+            "./images/SARATH2.JPG",
+            "./images/SARATH3.JPG",
+          ],
           name: "SARATH SANKAR C",
           id: "10",
           coords:
             "933,2925,938,2888,948,2861,978,2837,1007,2832,1028,2827,1047,2811,1065,2798,1057,2763,1039,2747,1041,2724,1039,2689,1039,2657,1065,2641,1102,2625,1126,2620,1145,2620,1160,2639,1174,2657,1171,2681,1179,2721,1179,2753,1166,2771,1155,2787,1155,2803,1168,2808,1179,2824,1198,2829,1213,2832,1232,2840,1248,2851,1259,2869,1269,2888,1277,2901,1277,2925,1280,2943,1285,2965,1288,2999,1277,3028,1253,3025,1237,3033,1248,3007,1251,2983,1259,2967,1259,2943,1259,2901,1243,2880,1224,2869,1208,2856,1190,2861,1168,2864,1145,2875,1118,2896,1107,2914,1100,2941,1105,2959,1105,2973,1100,2994,1113,3010,1115,3028,1097,3041,1054,3065,1023,3086,1001,3097,996,3113,986,3129,972,3137,951,3131,954,3097,970,3049,980,3020,991,2996,978,2970,956,2949",
           shape: "poly",
         },
+
         {
-          imageUrl: "./images/HARI.JPG",
+          imageUrl: [
+            "./images/HARI.JPG",
+            "./images/HARI1.JPG",
+            "./images/HARI2.JPG",
+            "./images/HARI3.JPG",
+            "./images/HARI4.JPG",
+            "./images/HARI5.JPG",
+          ],
           name: "HARINARAYANAN",
           id: "11",
           coords:
@@ -239,7 +327,14 @@
         },
 
         {
-          imageUrl: "./images/CHRISTO.JPG",
+          imageUrl: [
+            "./images/CHRISTO.JPG",
+            "./images/CHRISTO1.JPG",
+            "./images/CHRISTO2.JPG",
+            "./images/CHRISTO3.JPG",
+            "./images/CHRISTO4.JPG",
+            "./images/CHRISTO5.JPG",
+          ],
           name: "CHRISTO KL",
           id: "12",
           coords:
@@ -248,7 +343,7 @@
         },
 
         {
-          imageUrl: "./images/TITTU.JPG",
+          imageUrl: ["./images/TITTU.JPG", "./images/TITTU2.JPG", "./images/TITTU3.JPG", "./images/TITTU4.JPG"],
           name: "TITTU THOMAS GEORGY",
           id: "11",
           coords:
@@ -256,7 +351,15 @@
           shape: "poly",
         },
         {
-          imageUrl: "./images/SANDEEP.JPG",
+          imageUrl: [
+            "./images/SANDEEP.JPG",
+            "./images/SANDEEP1.JPG",
+            "./images/SANDEEP2.JPG",
+            "./images/SANDEEP3.JPG",
+            "./images/SANDEEP4.JPG",
+            "./images/SANDEEP5.JPG",
+            "./images/SANDEEP6.JPG",
+          ],
           name: "SANDEEP BHUVANADAS",
           id: "3",
           coords:
@@ -274,126 +377,71 @@
         const area = document.createElement("area");
         area.setAttribute("target", "");
         area.setAttribute("alt", student.name);
-        // area.setAttribute("title", student.name);
-        area.setAttribute("data-id", student.id);
-        area.setAttribute("data-name", student.name);
-        area.setAttribute("data-img", student.imageUrl);
+        area.dataset.id = student.id;
+        area.dataset.name = student.name;
+        area.dataset.img = JSON.stringify(student.imageUrl); // store array as JSON
         area.setAttribute("coords", student.coords);
         area.setAttribute("shape", student.shape);
-
         mapElement.appendChild(area);
       });
+
       const tooltip = document.getElementById("tooltip");
       const tooltipImage = document.getElementById("tooltip-image");
       const tooltipName = document.getElementById("tooltip-name");
       const image = document.getElementById("groupPhoto");
       const areas = document.querySelectorAll("area");
+      const spinner = document.getElementById("tooltip-spinner");
 
       // Disable click event on the image
       image.addEventListener("click", (event) => {
         event.stopPropagation();
         event.preventDefault();
       });
-
-      //   function scaleCoordinates() {
-      //     console.log("Width:", image.naturalWidth, "px");
-      // console.log("Height:", image.naturalHeight, "px");
-      //     const originalWidth = 3000;
-      //     const originalHeight = 4000;
-      //     const rect = image.getBoundingClientRect();
-
-      //     const xScale = rect.width / originalWidth;
-      //     const yScale = rect.height / originalHeight;
-
-      //     areas.forEach((area) => {
-      //       const originalCoords = area
-      //         .getAttribute("coords")
-      //         .split(",")
-      //         .map(Number);
-      //       const scaledCoords = originalCoords.map((val, index) =>
-      //         index % 2 === 0 ? val * xScale : val * yScale
-      //       );
-      //       area.setAttribute("coords", scaledCoords.join(","));
-      //     });
-      //   }
-
-      //   image.addEventListener("load", scaleCoordinates);
-      //   window.addEventListener("resize", scaleCoordinates);
-
       areas.forEach((area) => {
-        area.addEventListener("mouseenter", () => {
-          const name = area.dataset.name;
-          const imgSrc = area.dataset.img;
+        let currentImageIndex = 0;
+        let slideshowInterval;
+        const action = () => {
+          if (slideshowInterval) clearInterval(slideshowInterval);
 
-          // Set the name in the tooltip
-          tooltipName.textContent = name;
+          const images = JSON.parse(area.dataset.img || "[]");
+          currentImageIndex = 0;
 
-          // Show the spinner and hide the image initially
-          const spinner = document.getElementById("tooltip-spinner");
-          const tooltipImage = document.getElementById("tooltip-image");
-
+          tooltipName.textContent = area.dataset.name;
+          tooltip.style.display = "block";
           spinner.style.display = "block";
           tooltipImage.style.display = "none";
-          // Load the image
-          tooltipImage.src = imgSrc;
 
-          // Wait for the image to load
+          tooltipImage.src = images[currentImageIndex];
           tooltipImage.onload = () => {
             spinner.style.display = "none";
             tooltipImage.style.display = "block";
+            tooltipImage.classList.remove("hidden");
           };
 
-          tooltipImage.onerror = () => {
-            spinner.style.display = "none";
-            tooltipName.textContent = "Image failed to load";
-          };
+          slideshowInterval = setInterval(() => {
+            tooltipImage.classList.add("hidden");
 
-          // Show the tooltip
-          tooltip.style.display = "block";
-        });
+            setTimeout(() => {
+              currentImageIndex = (currentImageIndex + 1) % images.length;
+              tooltipImage.src = images[currentImageIndex];
+            }, 500); // after 0.3s fade out, change image
 
-        area.addEventListener("onclick", (e) => {
-          // e.stopPropagation();
-          const name = area.dataset.name;
-          const imgSrc = area.dataset.img;
+            setTimeout(() => {
+              tooltipImage.classList.remove("hidden"); // start fade in
+            }, 600); // fade in starts after new image loads
+          }, 2000);
+        };
 
-          // Load the image
-          tooltipImage.src = imgSrc;
-
-          // Wait for the image to load
-          tooltipImage.onload = () => {
-            spinner.style.display = "none";
-            tooltipImage.style.display = "block";
-          };
-
-          tooltipImage.onerror = () => {
-            spinner.style.display = "none";
-            tooltipName.textContent = "Image failed to load";
-          };
-
-          // Show the tooltip
-          tooltip.style.display = "block";
-        });
-
-        area.addEventListener("mousemove", (e) => {
-          const tooltipWidth = tooltip.offsetWidth;
-          const viewportWidth = window.innerWidth;
-
-          // Determine if the pointer is near the right edge
-          //   if (e.pageX + tooltipWidth + 20 > viewportWidth) {
-          //     // Position the tooltip to the left
-          //     tooltip.style.left = `${e.pageX - tooltipWidth - 15}px`;
-          //   } else {
-          //     // Position the tooltip to the right
-          //     tooltip.style.left = `${e.pageX + 15}px`;
-          //   }
-
-          //   tooltip.style.top = `${e.pageY + 15}px`;
-        });
+        area.addEventListener("mouseenter", () => action());
 
         area.addEventListener("mouseleave", () => {
+          if (slideshowInterval) {
+            clearInterval(slideshowInterval);
+            slideshowInterval = null;
+          }
           tooltip.style.display = "none";
         });
+        area.addEventListener("onclick", () => action());
       });
     </script>
   </body>
