@@ -128,7 +128,6 @@
           src=""
           alt="..."
           id="tooltip-image"
-          loading="lazy"
           style="display: none"
         />
         <h4 id="tooltip-name">Student Name</h4>
@@ -430,7 +429,7 @@
             setTimeout(() => {
               tooltipImage.classList.remove("hidden"); // start fade in
             }, 600); // fade in starts after new image loads
-          }, 3000);
+          }, 2000);
         };
 
         area.addEventListener("mouseenter", () => action());
