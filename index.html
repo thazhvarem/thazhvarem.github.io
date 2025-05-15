@@ -401,7 +401,7 @@
         let currentImageIndex = 0;
         let slideshowInterval;
         const action = () => {
-          if (slideshowInterval) clearInterval(slideshowInterval);
+           clearInterval(slideshowInterval);
 
           const images = JSON.parse(area.dataset.img || "[]");
           currentImageIndex = 0;
