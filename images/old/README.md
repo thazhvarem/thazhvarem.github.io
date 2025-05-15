@@ -1,1 +1,0 @@
-# thazhvarem.github.io
