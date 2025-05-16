@@ -34,7 +34,7 @@
         left: 50%;
         transform: translate(-50%, -30%);
         display: none;
-        background-color: #fff;
+        background-color: #f2e1c0;
         border: 1px solid #ddd;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         padding: 1rem;
@@ -42,9 +42,14 @@
         width: 280px;
         text-align: center;
         pointer-events: none;
-        border-radius: 8px;
+        border-radius: 10px;
         max-width: 90vw; /* Prevent overflow on very small screens */
       }
+      .tooltip h4 {
+          margin: 0.5rem 0 0;
+          color: #5d3b09;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
 
       /* Small screens (phones) */
       @media (max-width: 480px) {
@@ -53,7 +58,6 @@
           padding: 0.75rem;
         }
         .tooltip h4 {
-          margin: 0.5rem 0 0;
           font-size: 1rem;
         }
       }
@@ -65,7 +69,6 @@
           padding: 1rem;
         }
         .tooltip h4 {
-          margin: 0.5rem 0 0;
           font-size: 1.5rem;
         }
       }
@@ -429,7 +432,7 @@
             setTimeout(() => {
               tooltipImage.classList.remove("hidden"); // start fade in
             }, 600); // fade in starts after new image loads
-          }, 3000);
+          }, 2100);
         };
 
         area.addEventListener("mouseenter", () => action());
